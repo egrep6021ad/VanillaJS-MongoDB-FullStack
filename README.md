@@ -10,7 +10,7 @@
 
 
 ### Ruchita's Agenda
-- Figma Design Mile strone 2 / 3 
+- Figma Design Mile stone 2 / 3 
 - Milestone 2: User login
 - Milestone 3: Sellers Dashboard
 - PowerPoint (28 July)
