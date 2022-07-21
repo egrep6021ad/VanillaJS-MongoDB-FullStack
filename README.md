@@ -1,5 +1,5 @@
 # HomeFinder
-## Team Leader - Ruchita 
+## Team Leader - Ruchitha 
 ### Khal's Agenda
 - Figma Design Mile stone 1 / 6 ( 22 July )
 - Milestone 1: Home / Page User Registration  ( 24 July )
