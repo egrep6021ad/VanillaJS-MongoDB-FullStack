@@ -17,9 +17,9 @@
 
 
 ### SCRUM :
-Saturday: 8PM
-Monday: 8PM
-Weds: 8PM
-Friday: 8PM
+- Saturday: 8PM
+- Monday: 8PM
+- Weds: 8PM
+- Friday: 8PM
 
 SATURDAY: SUBMIT PROJECT
