@@ -1,0 +1,166 @@
+@font-face {
+    font-family: "lob";
+    src: url("../LobsterTwo-BoldItalic.ttf");
+}
+html{
+    height: 100%;
+    width: auto;
+
+}
+hr{
+    border: 0.3px black solid;
+    width: 100%;
+    height: 0;
+}
+body{
+    background-color: rgb(139, 229, 165);
+}
+main{
+    height: 100%;
+    width: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 2px black solid;
+}
+#nav{
+    height: 10vh;
+    width: auto;
+    display: inherit;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: whitesmoke;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+
+}
+#nav > a {
+    padding:5%;
+}
+#ads_container{
+    height: fit-content;
+    width: auto;
+    display: inherit;
+    margin: 5%;
+    background-color: white;
+    border-radius: 10px;
+
+}
+.ad{
+    height: 80%;
+    width: 30%;
+    margin:1%;
+    padding:1%;
+    border: 2px black solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.ad > p {
+    padding:0 0 5% 0;
+    margin:0;
+}
+.card{
+    height: 70%;
+    width: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#about_container{
+    height: fit-content;
+    width: 75%;
+    display: inherit;
+    flex-direction: column;
+    align-self: center;
+}
+#about_container> h1 {
+    padding: 2% 5% 0% 8%;
+    font-family: "lob";
+    text-decoration: underline;
+}
+#about_container > p {
+    text-align: center;
+    padding: 0% 7% 0% 7%;
+    line-height: 150%;
+}
+#about_container > img {
+    align-self: center;
+    height: 90%;
+    width:85%;
+    padding: 1%;
+    border-radius: 20px;
+}
+#registration_container{
+    background-color: white;
+    height: fit-content;
+    width: 50%;
+    display: inherit;
+    flex-direction: column;
+    margin: 5%;
+    padding:5%;
+    background-color: white;
+    border:2px white solid;
+    border-radius: 10px;
+    align-self: center;
+}
+#registration_form {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+
+}
+#registration_form  > input  {
+    width: 100%;
+    padding: 1% 0 1% 0;
+    margin: 1% 0 1% 0;
+    border-radius: 1px;
+    border-radius: 5px;
+    
+}
+
+#registration_form  > input[type="submit"]  {
+    width: 70%;
+    height: 100%;
+    padding:2%;
+    margin: 5% 0 0 0;
+    align-self: center;
+    border-radius: 5px;
+}
+
+#testimonials{
+    height:fit-content;
+    width: 80%;
+    align-self: center;
+    font-size: larger;
+}
+#testimonial_1, #testimonial_3{
+    padding:10%;
+    margin:5%;
+    opacity: 0.95;
+}
+#testimonial_2, #testimonial_4 {
+    text-align: right;
+    padding:10%;
+    margin:5%;
+    opacity: 0.95;
+} 
+#testimonial_2_image , #testimonial_4_image {
+    float: left;
+    margin: 0 0 0 6%;
+    height: 20%;
+    width: 40%;
+    border-radius: 10px;
+}
+#testimonial_1_image , #testimonial_3_image {
+    float: right;
+    margin: 0 0 10% 0;
+    height: 20%;
+    width: 40%;
+    border-radius: 10px;
+}
