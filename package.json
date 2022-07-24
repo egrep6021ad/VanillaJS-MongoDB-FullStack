@@ -1,0 +1,29 @@
+{
+  "name": "homefinder",
+  "version": "1.0.0",
+  "description": "project 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egrep6021ad/HomeFinder.git"
+  },
+  "author": "khal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/egrep6021ad/HomeFinder/issues"
+  },
+  "homepage": "https://github.com/egrep6021ad/HomeFinder#readme",
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.30.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongodb": "^4.8.0"
+  }
+}
