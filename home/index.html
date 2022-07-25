@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>HomeFinder</title>
+    <title>Find your next home</title>
     <meta name="description" content="A place to bring home buyers and sellers together under one platform.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="index.css">
@@ -12,7 +12,12 @@
 
 <body>
     <main>
-        <div id="nav"><a></a></div>
+        <div id="nav">
+            <h1>HomeFinder&copy;</h1>
+            <h3><a href="#">For Sale</a></h3>
+            <h3><a href="#">For Rent</a></h3>
+            <h3><a href="../login/index.html">Login</a></h3>
+        </div>
         <div id="ads_container">
             <div class="ad">
                 <img class="card" src="../images/card1.webp" />
@@ -44,14 +49,14 @@
                 with which letters occur in English, which is why at a glance it looks pretty real.”
                 <br /><br />
                 <img id="testimonial_1_image" src="../images/test1.webp"><br />
-                - Rebecca Walsh
+                <i>- Rebecca Walsh</i>
             </p>
             <p id="testimonial_2">"The placeholder text, beginning with the line “Lorem ipsum dolor sit amet,
                 consectetur
                 adipiscing elit, looks like Latin because in its youth, centuries ago, it was Latin."
                 <br /><br />
                 <img id="testimonial_2_image" src="../images/test2.webp"><br />
-                - Tom Clancy
+                <i>- Tom Clancy</i>
             </p>
 
             <p id="testimonial_3">"Richard McClintock, a Latin scholar from Hampden-Sydney College, is credited with
@@ -59,7 +64,7 @@
                 interest"
                 <br /><br />
                 <img id="testimonial_3_image" src="../images/test3.webp"><br />
-                -Patricia Barker
+                <i>-Patricia Barker</i>
             </p>
             <p id="testimonial_4">"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
                 adipisci
@@ -67,22 +72,21 @@
                 voluptatem.”
                 <br /><br />
                 <img id="testimonial_4_image" src="../images/test4.webp"><br />
-                -Tom Hanks
+                <i>-Tom Hanks</i>
             </p>
         </div>
         <div id="registration_container">
-            <h2>Signup</h2>
             <form id="registration_form">
                 <label for="name">Name</label>
-                <input required autocomplete="off" id="name" name="name" type="text" /><br />
+                <input required autocomplete="off" id="name" name="name" type="text" maxlength="50" /><br />
                 <label for="email">Email</label>
-                <input required autocomplete="off" id="email" name="email" type="text" /><br />
+                <input required autocomplete="off" id="email" name="email" type="text" maxlength="50" /><br />
                 <label for="phone">Phone</label>
-                <input required autocomplete="off" id="phone" name="phone" type="text" /><br />
+                <input required autocomplete="off" id="phone" name="phone" type="text" maxlength="50" /><br />
                 <label for="phone">Password</label>
-                <input required autocomplete="off" id="password" name="password" type="password" /><br />
+                <input required autocomplete="off" id="password" name="password" type="password" maxlength="50" /><br />
             </form>
-            <button id="send">Register</button><br />
+            <button id="send">Register Now!</button><br />
         </div>
     </main>
     <hr /><br />
