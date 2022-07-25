@@ -1,4 +1,5 @@
 # HomeFinder
+
 ## Team Leader - Ruchita 
 
 ### Run Locally:
@@ -9,6 +10,9 @@
 - in the main directory terminal command: "npm install" && 
     "node ./backend/backend.js"
 - open ./home/index.html in your preferred browser
+
+=======
+## Team Leader - Ruchitha 
 
 ### Khal's Agenda
 - ~~Milestone 1: Home / Page User Registration  ( 24 July )~~ https://youtu.be/ZJ5ZxQX_Iyg
