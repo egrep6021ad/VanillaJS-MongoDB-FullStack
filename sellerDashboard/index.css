@@ -1,0 +1,125 @@
+@font-face {
+    font-family: "lob";
+    src: url("../LobsterTwo-BoldItalic.ttf");
+}
+@keyframes animated_intro {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+body{
+    background-color: #444;
+}
+hr{
+    border: 0.3px black solid;
+    width: 100%;
+    height: 0;
+}
+main{
+    background-color: whitesmoke;
+    font-family: sans-serif;
+    border: 2px black solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#nav{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(139, 229, 165);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 1rem;
+    
+}
+#nav > h1 {
+    margin-left:2rem;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    text-decoration: underline;
+    font-family: "lob";
+    animation: animated_intro 2s forwards;
+}
+#nav > button {
+    margin-right: 2rem;
+    align-self: center;
+    height:3rem;
+    color: black;
+    font-family: "lob";
+    border-radius: 10px;
+}
+
+#nav  > button:hover{
+    color: #444;
+}
+
+#cardContainer{
+    display :flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+#cardContainer > div{
+ width: 20rem;
+ height: fit-content;
+ border:2px solid;
+ border-radius: 10px;
+ margin:2rem;
+ padding: 1rem;;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ font-family: "lob";
+}
+
+
+#cardContainer > div > img{
+    width: 100%;
+   }
+
+#cardContainer > div > p{
+    font-size: 1.8rem;
+    margin: 0.2rem;
+}
+
+#Inputform{
+    margin: auto;
+    border: 1px solid rgba(255, 255, 255, .25);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .25);
+    border-radius: 10px;
+    width: fit-content;
+    font-size: 1.6rem;
+    font-family: "lob";
+}
+
+#Inputform > h3{
+    text-align: center;
+}
+
+#Inputform > label{
+    margin: 1rem;
+}
+
+#Inputform > #name{
+    margin: 1rem 2.5rem;
+}
+
+#Inputform > #price{
+    margin: 1rem 3.2rem;
+}
+#Inputform > #location{
+    margin: 1rem 1.3rem;
+}
+
+
+#Inputform > #save{
+    margin: 1rem;
+    align-items: center;
+    width: 5rem;
+    border: 2px solid;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-family: "lob";
+
+}

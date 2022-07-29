@@ -1,0 +1,65 @@
+body{
+    background-color: #444;
+}
+
+main{
+    height: 100vh;
+    background-color: whitesmoke;
+    font-family: sans-serif;
+    border: 2px black solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#registration_container{
+    margin: auto;
+    width: 50%;
+    padding:5%;
+    display: inherit;
+    flex-direction: column;
+    align-self: center;
+    border: 1px solid rgba(255, 255, 255, .25);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .25);
+    backdrop-filter: blur(15px);
+}
+#registration_form {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#registration_form  > input  {
+    height: 30px;
+    width: 100%;
+    margin: 1% 0 1% 0;
+    padding: 1% 0 1% 0;
+    align-self: center;
+    border-radius: 1px;
+    border-radius: 5px;
+    text-indent: 5px;
+}
+
+button#send{
+    width:50%;
+    padding:3%;
+    align-self: center;
+    background-color: rgb(139, 229, 165);
+    border-radius: 5px;
+    border: none;
+    letter-spacing: 1px; 
+    font-weight: bold;
+}
+button#send:hover{
+    background-color: rgb(165, 238, 186);
+    cursor: pointer;
+}
+button#send:active{
+    border-color: black;
+}
+
+.SignupLink{
+    align-self: center;
+}

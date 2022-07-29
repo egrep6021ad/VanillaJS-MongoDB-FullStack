@@ -3,21 +3,27 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Seller Screen</title>
+    <title>Login</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-    <script src="index.js" type="text/javascript" async defer></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+
 </head>
 
 <body>
-    Login:
-    <input autocomplete="off" id="email" type="text" /><br />
-    <label for="email">Email</label>
-    <input id="password" type="password"><br />
-    <label for="password">Password</label>
-
-    <button id="send">Login</button>
+    <main>
+        <div id="registration_container">
+            <form id="registration_form">
+                <label for="email">Email</label>
+                <input required autocomplete="off" id="email" name="email" type="email" maxlength="50" /><br />
+                <label for="password">Password</label>
+                <input required autocomplete="off" id="password" name="password" type="password" maxlength="50" /><br />
+            </form>
+            <button id="send" onclick="handleClick()">Login</button><br />
+            <a href="./../home/index.html" class="SignupLink"> Dont have a Account? Sign Up</a>
+        </div>
+    </main>
 </body>
+<script src="index.js" type="text/javascript" async defer></script>
 
 </html>
