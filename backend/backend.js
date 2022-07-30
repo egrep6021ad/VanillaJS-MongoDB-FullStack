@@ -36,6 +36,10 @@ app.post('/AddNewProperty', (request, result) => {
   AddNewProperty(request.body, result);
 });
 
+app.post('/DeleteProperty', (request, result) => {
+  DeleteProperty(request.body, result);
+});
+
 const register = async (data, result) => {
   // Connect to mongo:
   const connection = new MongoClient('mongodb://127.0.0.1:27017/');
@@ -108,6 +112,21 @@ const AddNewProperty = async (data, result) => {
     floorplan: data.floorplan
   }
   const values ={$push: {Properties:Propertydata}}
+  const output = await Promise.resolve(clients.updateOne(query,values));
+  if (output.modifiedCount > 0) {
+    result.status(200).json({message: 'Registered!'});
+  } else result.status(200).json({message: 'Failed!'});
+};
+
+const DeleteProperty = async (data, result) => {
+  // Connect to mongo:
+  const connection = new MongoClient('mongodb://127.0.0.1:27017/');
+  // Connect to db:
+  const database = connection.db('webpro');
+  // Connect to collection:
+  const clients = database.collection('clients');
+  const query = {email: data.Useremail, Properties:data.Property };
+  const values ={$pull: {Properties:data.Property}}
   const output = await Promise.resolve(clients.updateOne(query,values));
   console.log(output)
   if (output.modifiedCount > 0) {
