@@ -32,15 +32,15 @@ app.post('/sellerData', (request, result) => {
 });
 
 app.post('/AddNewProperty', (request, result) => {
-  AddNewProperty(request.body, result);
+  addNewProperty(request.body, result);
 });
 
 app.post('/DeleteProperty', (request, result) => {
-  DeleteProperty(request.body, result);
+  deleteProperty(request.body, result);
 });
 
 app.post('/EditProperty', (request, result) => {
-  EditProperty(request.body, result);
+  editProperty(request.body, result);
 });
 
 const register = async (data, result) => {
@@ -97,10 +97,10 @@ const sellerData = async (data, result) => {
   const output = await Promise.resolve(clients.findOne(query));
   // If there isn't a document the the given email:
   if (output == null) result.status(200).json({message: 'FALSE'});
- else result.status(200).json({message: 'TRUE',output});
+  else result.status(200).json({message: 'TRUE', output});
 };
 
-const AddNewProperty = async (data, result) => {
+const addNewProperty = async (data, result) => {
   // Connect to mongo:
   const connection = new MongoClient('mongodb://127.0.0.1:27017/');
   // Connect to db:
@@ -112,31 +112,31 @@ const AddNewProperty = async (data, result) => {
     name: data.name,
     price: data.price,
     location: data.location,
-    floorplan: data.floorplan
-  }
-  const values ={$push: {Properties:Propertydata}}
-  const output = await Promise.resolve(clients.updateOne(query,values));
+    floorplan: data.floorplan,
+  };
+  const values ={$push: {Properties: Propertydata}};
+  const output = await Promise.resolve(clients.updateOne(query, values));
   if (output.modifiedCount > 0) {
     result.status(200).json({message: 'Registered!'});
   } else result.status(200).json({message: 'Failed!'});
 };
 
-const DeleteProperty = async (data, result) => {
+const deleteProperty = async (data, result) => {
   // Connect to mongo:
   const connection = new MongoClient('mongodb://127.0.0.1:27017/');
   // Connect to db:
   const database = connection.db('webpro');
   // Connect to collection:
   const clients = database.collection('clients');
-  const query = {email: data.Useremail, Properties:data.Property };
-  const values ={$pull: {Properties:data.Property}}
-  const output = await Promise.resolve(clients.updateOne(query,values));
+  const query = {email: data.Useremail, Properties: data.Property};
+  const values ={$pull: {Properties: data.Property}};
+  const output = await Promise.resolve(clients.updateOne(query, values));
   if (output.modifiedCount > 0) {
     result.status(200).json({message: 'Registered!'});
   } else result.status(200).json({message: 'Failed!'});
 };
 
-const EditProperty = async (data, result) => {
+const editProperty = async (data, result) => {
   // Connect to mongo:
   const connection = new MongoClient('mongodb://127.0.0.1:27017/');
   // Connect to db:
@@ -147,14 +147,14 @@ const EditProperty = async (data, result) => {
     name: data.name,
     price: data.price,
     location: data.location,
-    floorplan: data.floorplan
-  }
-  const query1 = {email: data.Useremail, Properties:data.Properties };
-  const values1 ={$pull: {Properties:data.Properties}}
-  const output1 = await Promise.resolve(clients.updateOne(query1,values1));
+    floorplan: data.floorplan,
+  };
+  // const query1 = {email: data.Useremail, Properties: data.Properties};
+  // const values1 ={$pull: {Properties: data.Properties}};
+  // const output1 = await Promise.resolve(clients.updateOne(query1, values1));
   const query = {email: data.Useremail};
-  const values ={$push: {Properties:Propertydata}}
-  const output = await Promise.resolve(clients.updateOne(query,values));
+  const values ={$push: {Properties: Propertydata}};
+  const output = await Promise.resolve(clients.updateOne(query, values));
   if (output.modifiedCount > 0) {
     result.status(200).json({message: 'Registered!'});
   } else result.status(200).json({message: 'Failed!'});

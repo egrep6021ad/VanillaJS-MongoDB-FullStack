@@ -14,7 +14,7 @@
 =======
 ## Team Leader - Ruchitha 
 
-### Khal's Agenda
+### Khalfani's Agenda
 - ~~Milestone 1: Home / Page User Registration  ( 24 July )~~ https://youtu.be/ZJ5ZxQX_Iyg
 - ~~Pretty up desgin to homepage/registration~~
 <img src='./images/24July1.webp'>
@@ -24,17 +24,13 @@
 - ~~Form validation in the user registration~~
 <img src='./images/24Jul4.webp'>
 
-- Add extra feature to home/registration page
-
-- Milestone 6: Seller tries to sell their house for more than the local average they will get a pop up alert to let them know   ( 27 July )
-
-- YouTube Video 
+- ~~YouTube Video~~ 
+https://youtu.be/K7bHHOAbU0k 
 
 ### Ruchita's Agenda
-- Figma Design Mile stone 2 / 3 
-- Milestone 2: User login
-- Milestone 3: Sellers Dashboard
-- PowerPoint (28 July)
+- ~~Milestone 2: User login~~
+- ~~Milestone 3: Sellers Dashboard~~
+- ~~PowerPoint (28 July)~~
 
 
 ### SCRUM :
