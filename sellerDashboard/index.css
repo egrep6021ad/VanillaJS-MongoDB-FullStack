@@ -40,7 +40,10 @@ main{
     font-family: "lob";
     animation: animated_intro 2s forwards;
 }
-#nav > button {
+#nav > div{
+    align-self: center;
+}
+#nav > div> button {
     margin-right: 2rem;
     align-self: center;
     height:3rem;
@@ -49,7 +52,7 @@ main{
     border-radius: 10px;
 }
 
-#nav  > button:hover{
+#nav  >div> button:hover{
     color: #444;
 }
 
@@ -79,6 +82,27 @@ main{
    }
 
 #cardContainer > div > p{
+    font-size: 1.8rem;
+    margin: 0.2rem;
+}
+
+#PropertyDetails{
+    display: flex;
+    flex-direction: column;
+    font-family: "lob";
+    margin-left: 2rem;
+}
+
+#PropertyDetails > div > img{
+    width: 50%;
+}
+
+#PropertyDetails > div > p{
+    font-size: 1.8rem;
+    margin: 0.2rem;
+}
+
+#PropertyDetails  > p{
     font-size: 1.8rem;
     margin: 0.2rem;
 }

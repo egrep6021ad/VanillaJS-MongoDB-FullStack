@@ -20,7 +20,6 @@ app.get('/', (request, result) => {
 
 app.post('/registration', (request, result) => {
   const data = request.body;
-  console.log(request.body);
   register(data, result);
 });
 
@@ -34,6 +33,14 @@ app.post('/sellerData', (request, result) => {
 
 app.post('/AddNewProperty', (request, result) => {
   AddNewProperty(request.body, result);
+});
+
+app.post('/DeleteProperty', (request, result) => {
+  DeleteProperty(request.body, result);
+});
+
+app.post('/EditProperty', (request, result) => {
+  EditProperty(request.body, result);
 });
 
 const register = async (data, result) => {
@@ -109,7 +116,45 @@ const AddNewProperty = async (data, result) => {
   }
   const values ={$push: {Properties:Propertydata}}
   const output = await Promise.resolve(clients.updateOne(query,values));
-  console.log(output)
+  if (output.modifiedCount > 0) {
+    result.status(200).json({message: 'Registered!'});
+  } else result.status(200).json({message: 'Failed!'});
+};
+
+const DeleteProperty = async (data, result) => {
+  // Connect to mongo:
+  const connection = new MongoClient('mongodb://127.0.0.1:27017/');
+  // Connect to db:
+  const database = connection.db('webpro');
+  // Connect to collection:
+  const clients = database.collection('clients');
+  const query = {email: data.Useremail, Properties:data.Property };
+  const values ={$pull: {Properties:data.Property}}
+  const output = await Promise.resolve(clients.updateOne(query,values));
+  if (output.modifiedCount > 0) {
+    result.status(200).json({message: 'Registered!'});
+  } else result.status(200).json({message: 'Failed!'});
+};
+
+const EditProperty = async (data, result) => {
+  // Connect to mongo:
+  const connection = new MongoClient('mongodb://127.0.0.1:27017/');
+  // Connect to db:
+  const database = connection.db('webpro');
+  // Connect to collection:
+  const clients = database.collection('clients');
+  const Propertydata = {
+    name: data.name,
+    price: data.price,
+    location: data.location,
+    floorplan: data.floorplan
+  }
+  const query1 = {email: data.Useremail, Properties:data.Properties };
+  const values1 ={$pull: {Properties:data.Properties}}
+  const output1 = await Promise.resolve(clients.updateOne(query1,values1));
+  const query = {email: data.Useremail};
+  const values ={$push: {Properties:Propertydata}}
+  const output = await Promise.resolve(clients.updateOne(query,values));
   if (output.modifiedCount > 0) {
     result.status(200).json({message: 'Registered!'});
   } else result.status(200).json({message: 'Failed!'});
