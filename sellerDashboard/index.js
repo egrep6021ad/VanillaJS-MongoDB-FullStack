@@ -10,7 +10,6 @@ window.onload = async () => {
   });
   // Backend response --> client:
   const response = await data.json();
-  console.log(response);
   // If server response indicated successful signup:
   if (response.message == 'TRUE') {
     const Properties = response.output.Properties;
@@ -27,6 +26,9 @@ window.onload = async () => {
             const img = document.createElement("img");
             const rand = Math.floor(Math.random() * 3) + 1;
             img.src = './../images/card'+rand+'.webp';
+            img.addEventListener('click', () => {
+                EditProperty(Properties[i]);
+                });
             const location = document.createElement("p");
             location.innerHTML = "Location :" +Properties[i].location;
             const Price = document.createElement("p");
@@ -39,7 +41,6 @@ window.onload = async () => {
             div.appendChild(Price);
             div.appendChild(floorPlan);
             div.appendChild(Delete);
-
             document.getElementById("cardContainer").appendChild(div);
         }
     }else{
@@ -53,8 +54,6 @@ window.onload = async () => {
   }
 
 };
-
-
 
 // eslint-disable-next-line no-unused-vars
 const handleClick = () => {
@@ -78,7 +77,6 @@ const submit = async () => {
   const price = document.getElementById('price').value;
   const location = document.getElementById('location').value;
   const floorplan = document.getElementById('floorPlan').value;
-  console.log(name);
   if (name && price && location && floorplan) {
     const data = await fetch('http://localhost:8080/AddNewProperty', {
       method: 'POST',
@@ -122,6 +120,12 @@ const DeleteProperty = async (Property) =>{
         alert('There was some error.Please try again');
       }
 
+}
+
+const EditProperty = async (Property) =>{
+    const Propertydetails = JSON.stringify(Property);
+    localStorage.setItem('Details', Propertydetails);
+    window.location.href = "./view.html";
 }
 
 const Logout =()=>{
