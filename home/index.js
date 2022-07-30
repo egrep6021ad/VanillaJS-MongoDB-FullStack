@@ -1,4 +1,4 @@
-// Init click handler:
+// Function to initialize click handler:
 window.onload = () => {
   const submitButton = document.getElementById('send');
   submitButton.addEventListener('click', () => {
@@ -6,7 +6,7 @@ window.onload = () => {
   });
 };
 
-// Handle form submission:
+// Function to handle form submission:
 const handleClick = async () => {
   // Get clean form data:
   const cleanData = getCleanData();
@@ -35,8 +35,8 @@ const handleClick = async () => {
   }
 };
 
+// Function to validate form data:
 const getCleanData = () => {
-  // Get form data:
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const phone = document.getElementById('phone').value;

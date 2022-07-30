@@ -1,13 +1,12 @@
 window.onload = async () => {
-    const email = sessionStorage.getItem("email");
-    console.log(email);
-    const data = await fetch('http://localhost:8080/sellerData', {
+  const email = sessionStorage.getItem('email');
+  const data = await fetch('http://localhost:8080/sellerData', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({Useremail:email }),
+    body: JSON.stringify({Useremail: email}),
   });
   // Backend response --> client:
   const response = await data.json();
@@ -26,7 +25,8 @@ window.onload = async () => {
             const heading = document.createElement("h1");
             heading.innerHTML = Properties[i].name;
             const img = document.createElement("img");
-            img.src = "./../images/card1.webp";
+            const rand = Math.floor(Math.random() * 3) + 1;
+            img.src = './../images/card'+rand+'.webp';
             const location = document.createElement("p");
             location.innerHTML = "Location :" +Properties[i].location;
             const Price = document.createElement("p");
@@ -55,9 +55,11 @@ window.onload = async () => {
 };
 
 
-const handleClick =  () => {
-    const form = document.getElementById("Inputform");
-    form.innerHTML = `
+
+// eslint-disable-next-line no-unused-vars
+const handleClick = () => {
+  const form = document.getElementById('Inputform');
+  form.innerHTML = `
     <h3>Add New Property</h3>
     <label>Name</label>
         <Input id="name"/><br>
@@ -68,38 +70,37 @@ const handleClick =  () => {
             <label>Floor Plan</label>
             <Input type="text" id="floorPlan" /><br>
         <Input type="submit" id="save" onclick="submit()"/>`;
-        
-    
- 
-}
+};
 
+// eslint-disable-next-line no-unused-vars
 const submit = async () => {
-   const name = document.getElementById("name").value;
-   const price = document.getElementById("price").value;
-   const location = document.getElementById("location").value;
-   const floorplan = document.getElementById("floorPlan").value;
-   if(name && price && location && floorplan){
+  const name = document.getElementById('name').value;
+  const price = document.getElementById('price').value;
+  const location = document.getElementById('location').value;
+  const floorplan = document.getElementById('floorPlan').value;
+  console.log(name);
+  if (name && price && location && floorplan) {
     const data = await fetch('http://localhost:8080/AddNewProperty', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({name: name, Useremail: sessionStorage.getItem("email"),
-      price: price, location: location,floorplan:floorplan}),
-  });
-  const response = await data.json();
-  // If server response indicated successful:
-  if (response.message == 'Registered!') {
-    alert('Property is Up for Sale');
-    window.location.reload(true);
-
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({name: name,
+        Useremail: sessionStorage.getItem('email'),
+        price: price, location: location, floorplan: floorplan}),
+    });
+    const response = await data.json();
+    // If server response indicated successful:
+    if (response.message == 'Registered!') {
+      alert('Property is Up for Sale');
+      window.location.reload(true);
+    } else {
+      alert('There was some error.Please try again');
+    }
   } else {
-    alert('There was some error.Please try again');
+    alert('Please enter all the details to add the property');
   }
-
-   }else 
-   alert("Please enter all the details to add the property");
    
 }
 
@@ -127,3 +128,4 @@ const Logout =()=>{
     window.location.href = "./../Home/index.html";
     sessionStorage.removeItem("email");
 }
+
