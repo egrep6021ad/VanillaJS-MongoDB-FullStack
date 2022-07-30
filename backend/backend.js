@@ -28,6 +28,14 @@ app.post('/login', (request, result) => {
   login(request.body, result);
 });
 
+app.post('/sellerData', (request, result) => {
+  sellerData(request.body, result);
+});
+
+app.post('/AddNewProperty', (request, result) => {
+  AddNewProperty(request.body, result);
+});
+
 const register = async (data, result) => {
   // Connect to mongo:
   const connection = new MongoClient('mongodb://127.0.0.1:27017/');
@@ -67,4 +75,42 @@ const login = async (data, result) => {
   else if (output.password == data.password) {
     result.status(200).json({message: 'TRUE'});
   } else result.status(200).json({message: 'FALSE'});
+};
+
+const sellerData = async (data, result) => {
+  // Connect to mongo:
+  const connection = new MongoClient('mongodb://127.0.0.1:27017/');
+  // Connect to db:
+  const database = connection.db('webpro');
+  // Connect to collection:
+  const clients = database.collection('clients');
+  // Format query:
+  const query = {email: data.Useremail};
+  // Find a document based on email:
+  const output = await Promise.resolve(clients.findOne(query));
+  // If there isn't a document the the given email:
+  if (output == null) result.status(200).json({message: 'FALSE'});
+ else result.status(200).json({message: 'TRUE',output});
+};
+
+const AddNewProperty = async (data, result) => {
+  // Connect to mongo:
+  const connection = new MongoClient('mongodb://127.0.0.1:27017/');
+  // Connect to db:
+  const database = connection.db('webpro');
+  // Connect to collection:
+  const clients = database.collection('clients');
+  const query = {email: data.Useremail};
+  const Propertydata = {
+    name: data.name,
+    price: data.price,
+    location: data.location,
+    floorplan: data.floorplan
+  }
+  const values ={$push: {Properties:Propertydata}}
+  const output = await Promise.resolve(clients.updateOne(query,values));
+  console.log(output)
+  if (output.modifiedCount > 0) {
+    result.status(200).json({message: 'Registered!'});
+  } else result.status(200).json({message: 'Failed!'});
 };

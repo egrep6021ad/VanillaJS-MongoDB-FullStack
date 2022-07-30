@@ -1,10 +1,10 @@
 // Init click handler:
-window.onload = () => {
-  const k = document.getElementById('send');
-  k.addEventListener('click', () => {
-    handleClick();
-  });
-};
+// window.onload = () => {
+//   const k = document.getElementById('send');
+//   k.addEventListener('click', () => {
+//     handleClick();
+//   });
+// };
 
 // Handle form submission:
 const handleClick = async () => {
@@ -25,7 +25,9 @@ const handleClick = async () => {
   console.log(response);
   // If server response indicated successful signup:
   if (response.message == 'TRUE') {
-    alert('Your logged in!');
+    window.location.href = "./../sellerDashboard/index.html";
+    sessionStorage.setItem("email", email);
+    
   } else {
     // Otherwise the email is already used:
     alert('Your email or password is incorrect!');
