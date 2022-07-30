@@ -22,59 +22,67 @@
             <div class="ad">
                 <img class="card" src="../images/card1.webp" />
                 <hr />
-                <p>particular, the garbled words of lorem ipsum bear an unmistakable resemblance to sections 1.</p>
+                <p>"We found out dream home tucked away off of a road we never,
+                    would have found! We could not be more happy with out purchase!"</p>
             </div>
             <div class="ad"><img class="card" src="../images/card2.webp" />
                 <hr />
-                <p>McClintock's eye for detail certainly helped narrow the whereabouts of lorem ipsum's origin,</p>
+                <p>"McClintock's eye for detail certainly helped narrow the whereabouts of
+                    of the buildsite. We hope the next family enjoys this home as much as we have!"
+                </p>
             </div>
             <div class="ad"><img class="card" src="../images/card3.webp" />
                 <hr />
-                <p>So how did the classical Latin become so incoherent? According to McClintock, a 15th centur</p>
+                <p>"This was the exact home we had been saving for, a quiet neighborhood
+                    with easy access to the highway has made this the perfect purchase!"
+                </p>
             </div>
         </div>
         <div id="about_container">
-            <h1>Origins and Discovery</h1>
-            <p> Lorem ipsum began as scrambled, nonsensical Latin derived from Cicero's 1st-century BC text De Finibus
-                Bonorum et Malorum.Lorem ipsum began as scrambled, nonsensical Latin derived from Cicero's 1st-century
-                BC
-                text De Finibus
-                Bonorum et Malorum.
+            <h1>About our company</h1>
+            <!-- What does your company do? -->
+            <!-- What kind of services do you provide? -->
+            <!-- Why do they have to choose you over your competitors -->
+            <!-- Anything that you do as a business unit to attract customers. -->
+            <p> Cicero's 1st-century BC home offered generations of our family countless memories
+                and we knew we had to make sure it had to end up in the right hands.
+                Then our company was born. <b>We provide a platform to connect buyer's and sellers
+                    in a way that all parties can find what they are looking for.</b>
+                We have a better selection of homes offered directly from sellers, <b>which also means a
+                    better price than our competitors.</b>
+                We make everything so easy from beggining to end that you have to give our service a try!
+                We even offer our sellers their own dashboard to control on monitor their transaction!
             </p>
             <img id="about_image" src="../images/about_image.webp" />
         </div>
         <div id="testimonials">
-            <p id="testimonial_1">"After magazine answered a curious reader, Its words loosely approximate the
-                frequency
-                with which letters occur in English, which is why at a glance it looks pretty real.”
+            <p id="testimonial_1">"We found the home we thought we would only see in movies!”
                 <br /><br />
                 <img id="testimonial_1_image" src="../images/test1.webp"><br />
                 <i>- Rebecca Walsh</i>
             </p>
-            <p id="testimonial_2">"The placeholder text, beginning with the line “Lorem ipsum dolor sit amet,
-                consectetur
-                adipiscing elit, looks like Latin because in its youth, centuries ago, it was Latin."
+            <p id="testimonial_2">"Our home not not only sold faster than we though it would, but for more as well!"
                 <br /><br />
                 <img id="testimonial_2_image" src="../images/test2.webp"><br />
                 <i>- Tom Clancy</i>
             </p>
 
-            <p id="testimonial_3">"Richard McClintock, a Latin scholar from Hampden-Sydney College, is credited with
-                discovering the source behind the ubiquitous filler text. In seeing a sample of lorem ipsum, his
-                interest"
+            <p id="testimonial_3">"This is the third move we have made not only buying through HomeFinder, but also
+                selling!
+                They make things so easy there is no reason not to keep coming back"
                 <br /><br />
                 <img id="testimonial_3_image" src="../images/test3.webp"><br />
                 <i>-Patricia Barker</i>
             </p>
-            <p id="testimonial_4">"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-                adipisci
-                velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-                voluptatem.”
+            <p id="testimonial_4">"I found the perfect home to for Jenny and myself. If it was not for HomeFinder
+                I dont know where we would be living.”
                 <br /><br />
                 <img id="testimonial_4_image" src="../images/test4.webp"><br />
                 <i>-Tom Hanks</i>
             </p>
         </div>
+        <!-- User registration option 1 -->
+        <!-- This portal handles registration of both buyers and sellers -->
         <div id="registration_container">
             <form id="registration_form">
                 <label for="name">Name</label>
@@ -85,6 +93,12 @@
                 <input required autocomplete="off" id="phone" name="phone" type="text" maxlength="50" /><br />
                 <label for="phone">Password</label>
                 <input required autocomplete="off" id="password" name="password" type="password" maxlength="50" /><br />
+                <span id="selection_container">
+                    <label for="selling">Selling</label>
+                    <input type="checkbox" id="selling" name="selling" value="selling" />
+                    <label id='buying_label' for="buying">Buying</label>
+                    <input type="checkbox" id="buying" name="buying" value="buying" />
+                </span>
             </form>
             <button id="send">Register Now!</button><br />
         </div>
