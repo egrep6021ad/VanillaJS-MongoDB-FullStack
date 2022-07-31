@@ -1,4 +1,5 @@
 window.onload = async () => {
+  let totalCost =0;
   const email = sessionStorage.getItem('email');
   const data = await fetch('http://localhost:8080/sellerData', {
     method: 'POST',
@@ -33,6 +34,7 @@ window.onload = async () => {
             location.innerHTML = "Location :" +Properties[i].location;
             const Price = document.createElement("p");
             Price.innerHTML = "Price :" +Properties[i].price;
+            totalCost = totalCost +parseInt(Properties[i].price);
             const floorPlan = document.createElement("p");
             floorPlan.innerHTML = "Floor Plan :" +Properties[i].floorplan;
             div.appendChild(heading);
@@ -42,7 +44,9 @@ window.onload = async () => {
             div.appendChild(floorPlan);
             div.appendChild(Delete);
             document.getElementById("cardContainer").appendChild(div);
+            
         }
+        document.getElementById("totalCost").innerHTML="The Total Cost of all the properties listed is "+totalCost;
     }else{
         alert('Please add Properties for sale!');
     }
